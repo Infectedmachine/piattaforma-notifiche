@@ -24,3 +24,10 @@ export interface HeroProps {
 }
 
 export type IconTypeText = "primary" | "secondary";
+
+export interface GridItemProps {
+  title: string;
+  titleMobile: string;
+  body?: string;
+  image?: string;
+}

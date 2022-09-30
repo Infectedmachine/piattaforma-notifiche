@@ -2,6 +2,7 @@ import { ThemeProvider } from "@mui/material";
 import { theme, Walkthrough } from "@pagopa/mui-italia";
 import { graphql, HeadFC } from "gatsby";
 import * as React from "react";
+import GridItem from "../components/GridItem";
 import HeroComponent from "../components/Hero";
 import LinkComponent from "../components/Link";
 import { IconTypeText } from "../models/pages";
@@ -47,6 +48,7 @@ const IndexPage = ({
         />
         <HeroComponent {...heroMock} />
         <LinkComponent {...linkMock} />
+        <GridItem {...{image: linkMock.icon, ...linkMock}} />
       </ThemeProvider>
     </>
   );
