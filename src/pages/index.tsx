@@ -1,3 +1,4 @@
+import { AspectRatio } from "@mui/icons-material";
 import { ThemeProvider } from "@mui/material";
 import { theme, Walkthrough } from "@pagopa/mui-italia";
 import { graphql, HeadFC } from "gatsby";
@@ -17,7 +18,6 @@ const heroMock = {
   images: [
     "https://upload.wikimedia.org/wikipedia/commons/5/5f/Piggy_Bank_or_Savings_Flat_Icon_Vector.svg",
   ],
-  imagePosition: "left" as ImagePosition
 };
 
 const linkMock = {
@@ -50,7 +50,9 @@ const IndexPage = ({
           ]}
         />
         <HeroComponent {...heroMock} />
-        <InfoblockComponent {...heroMock} />
+        <InfoblockComponent
+          {...{ ...heroMock, aspectRatio: "9/16", imagePosition: "left" }}
+        />
         <LinkComponent {...linkMock} />
         <GridItem {...{ image: linkMock.icon, ...linkMock }} />
         <Grid
