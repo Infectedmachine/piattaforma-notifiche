@@ -1,3 +1,5 @@
+export type IconTypeText = "primary" | "secondary";
+export type ImagePosition = "left" | "right" | "top" | "bottom";
 export interface LinkProps {
   title: string;
   titleMobile: string;
@@ -8,7 +10,7 @@ export interface LinkProps {
   externalUrl?: string;
   cssClass?: string;
   attributes?: Array<string>;
-  target? : any;
+  target?: string;
 }
 
 export interface HeroProps {
@@ -17,13 +19,11 @@ export interface HeroProps {
   body: string;
   images?: Array<string>;
   background?: string;
-  imageInverse?: boolean;
+  imagePosition?: ImagePosition;
   buttons?: Array<LinkProps>;
   attributes?: Array<string>;
   cssClass?: string;
 }
-
-export type IconTypeText = "primary" | "secondary";
 
 export interface GridItemProps {
   title: string;
@@ -32,7 +32,7 @@ export interface GridItemProps {
   image?: string;
 }
 
-export interface GridProps { 
+export interface GridProps {
   title: string;
   titleMobile: string;
   body: Array<GridItemProps>;

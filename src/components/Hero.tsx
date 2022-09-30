@@ -12,7 +12,7 @@ export default function HeroComponent(props: HeroProps) {
     <Hero
       title={isMobileDevice ? props.titleMobile : props.title}
       subtitle={props.body}
-      inverse={props.imageInverse}
+      inverse={props.imagePosition === "left"}
       background={props.background}
       {...(props.images
         ? {

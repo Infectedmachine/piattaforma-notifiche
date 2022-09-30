@@ -15,7 +15,7 @@ export default function LinkComponent(props: LinkProps) {
   return (
     <Link
       href={props.externalUrl}
-      target="_blank"
+      target={props.target}
       rel="noopener noreferrer"
       style={{ textDecoration: "none", cursor: "pointer" }}
       onClick={() => props.related && navigate(props.related)}
