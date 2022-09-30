@@ -5,6 +5,7 @@ import * as React from "react";
 import Grid from "../components/Grid";
 import GridItem from "../components/GridItem";
 import HeroComponent from "../components/Hero";
+import InfoblockComponent from "../components/Infoblock";
 import LinkComponent from "../components/Link";
 import { IconTypeText, ImagePosition } from "../models/pages";
 
@@ -49,6 +50,7 @@ const IndexPage = ({
           ]}
         />
         <HeroComponent {...heroMock} />
+        <InfoblockComponent {...heroMock} />
         <LinkComponent {...linkMock} />
         <GridItem {...{ image: linkMock.icon, ...linkMock }} />
         <Grid
