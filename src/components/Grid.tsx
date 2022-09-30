@@ -11,13 +11,13 @@ export default function Grid(props: GridProps) {
     <Showcase
       title={isMobileDevice ? props.titleMobile : props.title}
       items={props.body.map((item) => ({
-        icon: (
+        icon: item.image ? (
           <img
             src={item.image}
             alt={item.title}
             style={{ width: "60px", height: "60px" }}
           />
-        ),
+        ) : undefined,
         title: isMobileDevice ? item.titleMobile : item.title,
         subtitle: item.body || "",
       }))}
