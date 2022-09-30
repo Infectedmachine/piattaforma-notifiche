@@ -31,3 +31,9 @@ export interface GridItemProps {
   body?: string;
   image?: string;
 }
+
+export interface GridProps { 
+  title: string;
+  titleMobile: string;
+  body: Array<GridItemProps>;
+}
