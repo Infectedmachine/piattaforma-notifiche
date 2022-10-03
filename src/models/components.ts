@@ -49,3 +49,16 @@ export interface SeoProps {
   pathname?: string; 
   children?: React.ReactNode;
 }
+
+export interface WalkthroughItem {
+  image?: string;
+  title: string;
+  titleMobile: string;
+  body: string | JSX.Element;
+  isSequential?: boolean;
+}
+export interface WalkthroughProps {
+  title: string;
+  titleMobile: string;
+  body: Array<WalkthroughItem>;
+}

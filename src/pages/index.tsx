@@ -9,6 +9,7 @@ import HeroComponent from "../components/Hero";
 import InfoblockComponent from "../components/Infoblock";
 import LinkComponent from "../components/Link";
 import SEO from "../components/Seo";
+import WalkthroughComponent from "../components/Walkthrough";
 import { IconTypeText, ImagePosition } from "../models/components";
 
 const heroMock = {
@@ -43,13 +44,10 @@ const IndexPage = ({
     <>
       <ThemeProvider theme={theme}>
         <SEO />
-        <Walkthrough
-          title="test"
-          items={[
-            { title: "item1", subtitle: "testing" },
-            { title: "item2", subtitle: "testing" },
-            { title: "item3", subtitle: "testing" },
-          ]}
+        <WalkthroughComponent
+          title="test grid"
+          titleMobile="same"
+          body={Array(4).fill({ ...{ image: linkMock.icon, ...linkMock } })}
         />
         <HeroComponent {...heroMock} />
         <InfoblockComponent
