@@ -41,11 +41,11 @@ export interface GridProps {
 }
 
 export interface SeoProps {
-  author: string;
-  site: string;
-  creator: string;
-  title: string;
-  description: string;
-  pathname: string; 
-  children: React.ReactNode;
+  author?: string;
+  site?: string;
+  creator?: string;
+  title?: string;
+  description?: string;
+  pathname?: string; 
+  children?: React.ReactNode;
 }

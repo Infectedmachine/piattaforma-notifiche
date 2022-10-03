@@ -8,6 +8,7 @@ import GridItem from "../components/GridItem";
 import HeroComponent from "../components/Hero";
 import InfoblockComponent from "../components/Infoblock";
 import LinkComponent from "../components/Link";
+import SEO from "../components/Seo";
 import { IconTypeText, ImagePosition } from "../models/components";
 
 const heroMock = {
@@ -41,6 +42,7 @@ const IndexPage = ({
   return (
     <>
       <ThemeProvider theme={theme}>
+        <SEO />
         <Walkthrough
           title="test"
           items={[

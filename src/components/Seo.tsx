@@ -73,7 +73,7 @@ export default function SEO(props: SeoProps) {
       <meta name="twitter:title" content={seo.title} />
       <meta name="twitter:description" content={seo.description} />
       <meta name="twitter:image" content={seo.image} />
-      <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+      <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
       <meta
         name="viewport"
         content="width=device-width, initial-scale=1, shrink-to-fit=no"
