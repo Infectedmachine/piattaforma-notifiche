@@ -1,7 +1,7 @@
 import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { Showcase } from "@pagopa/mui-italia";
 import * as React from "react";
-import { GridProps } from "../models/pages";
+import { GridProps } from "../models/components";
 import altIcon from "../images/altIcon.png";
 
 export default function Grid(props: GridProps) {

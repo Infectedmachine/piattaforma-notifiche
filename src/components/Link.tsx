@@ -2,7 +2,7 @@ import { BoyRounded } from "@mui/icons-material";
 import { Box, Link, useMediaQuery, useTheme } from "@mui/material";
 import { navigate } from "gatsby";
 import * as React from "react";
-import { LinkProps } from "../models/pages";
+import { LinkProps } from "../models/components";
 import GridItem from "./GridItem";
 
 export default function LinkComponent(props: LinkProps) {

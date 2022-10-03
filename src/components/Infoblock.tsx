@@ -2,7 +2,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { Hero, Infoblock } from "@pagopa/mui-italia";
 import { navigate } from "gatsby";
 import * as React from "react";
-import { HeroProps } from "../models/pages";
+import { HeroProps } from "../models/components";
 import altIcon from "../images/altIcon.png";
 
 export default function InfoblockComponent(props: HeroProps) {

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { GridItemProps } from "../models/pages";
+import { GridItemProps } from "../models/components";
 import { Box, Link, Typography, useMediaQuery, useTheme } from "@mui/material";
 import altIcon from "../images/altIcon.png";
 

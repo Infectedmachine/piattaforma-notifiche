@@ -2,7 +2,7 @@ import { useMediaQuery, useTheme } from "@mui/material";
 import { Hero } from "@pagopa/mui-italia";
 import { navigate } from "gatsby";
 import * as React from "react";
-import { HeroProps } from "../models/pages";
+import { HeroProps } from "../models/components";
 
 export default function HeroComponent(props: HeroProps) {
   const theme = useTheme();

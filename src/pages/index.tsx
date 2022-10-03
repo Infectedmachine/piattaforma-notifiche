@@ -8,7 +8,7 @@ import GridItem from "../components/GridItem";
 import HeroComponent from "../components/Hero";
 import InfoblockComponent from "../components/Infoblock";
 import LinkComponent from "../components/Link";
-import { IconTypeText, ImagePosition } from "../models/pages";
+import { IconTypeText, ImagePosition } from "../models/components";
 
 const heroMock = {
   title: "Titolo",

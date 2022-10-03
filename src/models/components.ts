@@ -39,3 +39,13 @@ export interface GridProps {
   titleMobile: string;
   body: Array<GridItemProps>;
 }
+
+export interface SeoProps {
+  author: string;
+  site: string;
+  creator: string;
+  title: string;
+  description: string;
+  pathname: string; 
+  children: React.ReactNode;
+}
