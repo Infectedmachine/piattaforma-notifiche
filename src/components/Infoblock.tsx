@@ -12,7 +12,7 @@ export default function InfoblockComponent(props: HeroProps) {
   return (
     <Infoblock
       title={isMobileDevice ? props.titlemobile : props.title}
-      content={props.body}
+      content={props.body.data.body}
       inverse={props.imageposition === "left"}
       imageShadow={false}
       image={props.images?.[0].url || altIcon}

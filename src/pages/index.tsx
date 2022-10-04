@@ -2,6 +2,7 @@ import { ThemeProvider } from "@mui/material";
 import { theme } from "@pagopa/mui-italia";
 import { graphql, HeadFC } from "gatsby";
 import * as React from "react";
+import BlocksRenderer from "../components/componentsRenderer";
 import Grid from "../components/Grid";
 import GridItem from "../components/GridItem";
 import HeroComponent from "../components/Hero";
@@ -9,6 +10,7 @@ import InfoblockComponent from "../components/Infoblock";
 import LinkComponent from "../components/Link";
 import SEO from "../components/Seo";
 import WalkthroughComponent from "../components/Walkthrough";
+import { useAllStrapiPages } from "../hooks/useAllStrapiPage";
 import { useStrapiMetadata } from "../hooks/useStrapiMetadata";
 
 const heroMock = {
@@ -40,27 +42,13 @@ const linkMock = {
 };
 const IndexPage = () => {
   const strapiSeo = useStrapiMetadata();
+  const strapiPages = useAllStrapiPages();
 
   return (
     <>
       <ThemeProvider theme={theme}>
         <SEO {...strapiSeo} />
-        <WalkthroughComponent
-          title="test grid"
-          titleMobile="same"
-          body={Array(4).fill({ ...linkMock })}
-        />
-        <HeroComponent {...heroMock} />
-        <InfoblockComponent
-          {...{ ...heroMock, aspectRatio: "9/16", imagePosition: "left" }}
-        />
-        <LinkComponent {...linkMock} />
-        <GridItem {...linkMock} />
-        <Grid
-          title="test grid"
-          titleMobile="same"
-          items={Array(4).fill({ ...linkMock })}
-        />
+        <BlocksRenderer blocks={strapiPages[0].blocks} />
       </ThemeProvider>
     </>
   );

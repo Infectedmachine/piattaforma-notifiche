@@ -7,14 +7,14 @@ export interface PageProps {
   titleMobile?: string;
   description?: string;
   slug: string;
-  body?: string;
+  body?: { data: { body: string } };
   blocks: Array<GridProps | HeroProps | LinkProps>;
   seo?: SeoProps;
 }
-export interface LinkProps {
+export interface LinkProps extends StrapiBlock {
   title: string;
   titlemobile: string;
-  body?: string;
+  body?: { data: { body: string } };
   image?: StrapiImage;
   page?: PageProps;
   externalUrl?: string;
@@ -24,10 +24,10 @@ export interface LinkProps {
   reactcomponent?: string;
 }
 
-export interface HeroProps {
+export interface HeroProps extends StrapiBlock {
   title: string;
   titlemobile: string;
-  body: string;
+  body: { data: { body: string } };
   images?: Array<StrapiImage>;
   imageposition?: ImagePosition;
   attributes?: Array<string>;
@@ -38,10 +38,10 @@ export interface HeroProps {
 
 export interface GridItemProps extends LinkProps {}
 
-export interface GridProps {
+export interface GridProps extends StrapiBlock {
   title: string;
   titleMobile: string;
-  body?: string;
+  body?: { data: { body: string } };
   items: Array<GridItemProps>;
 }
 
@@ -65,7 +65,7 @@ export interface WalkthroughItem {
   image?: StrapiImage;
   title: string;
   titleMobile: string;
-  body: string | JSX.Element;
+  body: { data: { body: string } };
   isSequential?: boolean;
 }
 export interface WalkthroughProps {

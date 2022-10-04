@@ -7,15 +7,15 @@ import { HeroProps } from "../models/components";
 export default function HeroComponent(props: HeroProps) {
   const theme = useTheme();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
-
+  console.log(`${process.env.STRAPI_API_URL}${props.images?.[0].url}`);
   return (
     <Hero
       title={isMobileDevice ? props.titlemobile : props.title}
-      subtitle={props.body}
+      subtitle={props.body.data.body}
       inverse={props.imageposition === "left"}
       {...(props.images
         ? {
-            image: props.images[0].url,
+            image: `${process.env.STRAPI_API_URL}${props.images[0].url}`,
             type: "image",
             altText: "",
           }

@@ -46,7 +46,7 @@ export default function GridItem(
         component={"div"}
         sx={{ color: theme.palette.text.secondary }}
       >
-        {props.body}
+        {props.body?.data.body}
       </Typography>
     </Box>
   );

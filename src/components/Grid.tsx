@@ -30,7 +30,7 @@ export default function Grid(props: GridProps) {
           />
         ) : undefined,
         title: isMobileDevice ? item.titlemobile : item.title,
-        subtitle: item.body || "",
+        subtitle: item.body?.data.body || "",
       }))}
     />
   );

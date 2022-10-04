@@ -33,7 +33,7 @@ export default function WalkthroughComponent(props: WalkthroughProps) {
           />
         ) : undefined,
         title: isMobileDevice ? item.titleMobile : item.title,
-        subtitle: item.body || "",
+        subtitle: item.body.data.body || "",
       }))}
     />
   );
