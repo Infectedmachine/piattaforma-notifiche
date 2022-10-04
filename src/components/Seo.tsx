@@ -18,7 +18,7 @@ export default function SEO(props: SeoProps) {
     title: props.metaTitle || defaultTitle,
     description: props.metaDescription || defaultDescription,
     image: `${props.canonicalURL || defaultUrl}${
-      props.metaImage || defaultImage
+      props.metaImage?.url || defaultImage
     }`,
     url: `${props.canonicalURL}`,
     socialNetwork:

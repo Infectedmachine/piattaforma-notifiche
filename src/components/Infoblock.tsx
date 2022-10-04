@@ -15,7 +15,7 @@ export default function InfoblockComponent(props: HeroProps) {
       content={props.body}
       inverse={props.imageposition === "left"}
       imageShadow={false}
-      image={props.images?.[0] || altIcon}
+      image={props.images?.[0].url || altIcon}
       ctaPrimary={
         props.buttons?.[0] && {
           label: props.buttons[0].title,

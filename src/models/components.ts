@@ -1,5 +1,7 @@
 export type ImagePosition = "left" | "right" | "top" | "bottom";
-
+export interface StrapiImage {
+  url: string;
+}
 export interface PageProps {
   title: string;
   titleMobile?: string;
@@ -13,7 +15,7 @@ export interface LinkProps {
   title: string;
   titlemobile: string;
   body?: string;
-  image?: string;
+  image?: StrapiImage;
   page?: PageProps;
   externalUrl?: string;
   target?: string;
@@ -26,7 +28,7 @@ export interface HeroProps {
   title: string;
   titlemobile: string;
   body: string;
-  images?: Array<string>;
+  images?: Array<StrapiImage>;
   imageposition?: ImagePosition;
   attributes?: Array<string>;
   cssclass?: string;
@@ -46,12 +48,12 @@ export interface GridProps {
 export interface SeoProps {
   metaTitle?: string;
   metaDescription?: string;
-  metaImage?: string;
+  metaImage?: StrapiImage;
   metaSocial?: {
     socialNetwork?: string;
     title?: string;
     description?: string;
-    image?: string;
+    image?: StrapiImage;
   };
   keywords?: string;
   metaRobots?: string;
@@ -60,7 +62,7 @@ export interface SeoProps {
 }
 
 export interface WalkthroughItem {
-  image?: string;
+  image?: StrapiImage;
   title: string;
   titleMobile: string;
   body: string | JSX.Element;
@@ -72,6 +74,6 @@ export interface WalkthroughProps {
   body: Array<WalkthroughItem>;
 }
 
-export interface StrapiBlock { 
+export interface StrapiBlock {
   __typename: string;
 }

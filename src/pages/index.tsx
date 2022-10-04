@@ -9,6 +9,7 @@ import InfoblockComponent from "../components/Infoblock";
 import LinkComponent from "../components/Link";
 import SEO from "../components/Seo";
 import WalkthroughComponent from "../components/Walkthrough";
+import { useStrapiMetadata } from "../hooks/useStrapiMetadata";
 
 const heroMock = {
   title: "Titolo",
@@ -22,7 +23,9 @@ const heroMock = {
     },
   ],
   images: [
-    "https://upload.wikimedia.org/wikipedia/commons/5/5f/Piggy_Bank_or_Savings_Flat_Icon_Vector.svg",
+    {
+      url: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Piggy_Bank_or_Savings_Flat_Icon_Vector.svg",
+    },
   ],
 };
 
@@ -30,15 +33,18 @@ const linkMock = {
   title: "Convenienza",
   titlemobile: "test link",
   body: "Il recapito delle notifiche in digitale comporta minori costi di notificazione e spedizione",
-  image:
-    "https://upload.wikimedia.org/wikipedia/commons/5/5f/Piggy_Bank_or_Savings_Flat_Icon_Vector.svg",
+  image: {
+    url: "https://upload.wikimedia.org/wikipedia/commons/5/5f/Piggy_Bank_or_Savings_Flat_Icon_Vector.svg",
+  },
   page: { title: "random", slug: "about", blocks: [] },
 };
 const IndexPage = () => {
+  const strapiSeo = useStrapiMetadata();
+
   return (
     <>
       <ThemeProvider theme={theme}>
-        <SEO />
+        <SEO {...strapiSeo} />
         <WalkthroughComponent
           title="test grid"
           titleMobile="same"
@@ -63,85 +69,3 @@ const IndexPage = () => {
 export default IndexPage;
 
 export const Head: HeadFC = () => <title>Home Page</title>;
-
-export const query = graphql`
-  query {
-    site {
-      siteMetadata {
-        canonicalURL
-        description
-        keywords
-        metaDescription
-        metaRobots
-        metaTitle
-        title
-        metaViewport
-        metaSocial {
-          description
-          image
-          socialNetwork
-          title
-        }
-      }
-    }
-    allStrapiPage {
-      nodes {
-        title
-        titlemobile
-        slug
-        blocks {
-          ... on STRAPI__COMPONENT_SHARED_GRID {
-            body {
-              data {
-                body
-              }
-            }
-            strapi_component
-            title
-            titlemobile
-            items {
-              body {
-                data {
-                  body
-                }
-              }
-              title
-              titlemobile
-            }
-          }
-          ... on STRAPI__COMPONENT_SHARED_HERO {
-            body {
-              data {
-                body
-              }
-            }
-            imageposition
-            images {
-              url
-            }
-            strapi_component
-            title
-            titlemobile
-          }
-          ... on STRAPI__COMPONENT_SHARED_LINK {
-            body {
-              data {
-                body
-              }
-            }
-            strapi_component
-            titlemobile
-            page {
-              slug
-            }
-          }
-        }
-        body {
-          data {
-            body
-          }
-        }
-      }
-    }
-  }
-`;

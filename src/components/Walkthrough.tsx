@@ -8,7 +8,7 @@ export default function WalkthroughComponent(props: WalkthroughProps) {
   const theme = useTheme();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
   const [altImages, setAltImages] = React.useState<Array<string | undefined>>(
-    props.body.map((item) => item.image)
+    props.body.map((item) => item.image?.url)
   );
 
   const onImgError = React.useCallback(

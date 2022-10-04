@@ -15,7 +15,7 @@ export default function HeroComponent(props: HeroProps) {
       inverse={props.imageposition === "left"}
       {...(props.images
         ? {
-            image: props.images[0],
+            image: props.images[0].url,
             type: "image",
             altText: "",
           }

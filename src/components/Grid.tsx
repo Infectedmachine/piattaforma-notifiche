@@ -8,7 +8,7 @@ export default function Grid(props: GridProps) {
   const theme = useTheme();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
   const [altImages, setAltImages] = React.useState<Array<string | undefined>>(
-    props.items.map((item) => item.image)
+    props.items.map((item) => item.image?.url)
   );
 
   const onImgError = React.useCallback((index: number) => {

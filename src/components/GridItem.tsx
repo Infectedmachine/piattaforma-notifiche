@@ -8,7 +8,7 @@ export default function GridItem(
 ) {
   const theme = useTheme();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
-  const [altImage, setAltImage] = React.useState(props.image);
+  const [altImage, setAltImage] = React.useState(props.image?.url);
 
   const onImgError = React.useCallback(() => setAltImage(altIcon), []);
 
