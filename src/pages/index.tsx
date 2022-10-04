@@ -84,5 +84,64 @@ export const query = graphql`
         }
       }
     }
+    allStrapiPage {
+      nodes {
+        title
+        titlemobile
+        slug
+        blocks {
+          ... on STRAPI__COMPONENT_SHARED_GRID {
+            body {
+              data {
+                body
+              }
+            }
+            strapi_component
+            title
+            titlemobile
+            items {
+              body {
+                data {
+                  body
+                }
+              }
+              title
+              titlemobile
+            }
+          }
+          ... on STRAPI__COMPONENT_SHARED_HERO {
+            body {
+              data {
+                body
+              }
+            }
+            imageposition
+            images {
+              url
+            }
+            strapi_component
+            title
+            titlemobile
+          }
+          ... on STRAPI__COMPONENT_SHARED_LINK {
+            body {
+              data {
+                body
+              }
+            }
+            strapi_component
+            titlemobile
+            page {
+              slug
+            }
+          }
+        }
+        body {
+          data {
+            body
+          }
+        }
+      }
+    }
   }
 `;
