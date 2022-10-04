@@ -4,31 +4,34 @@ import { SeoProps } from "../models/components";
 
 export default function SEO(props: SeoProps) {
   const {
-    author: defaultAuthor,
-    site: defaultSite,
-    creator: defaultCreator,
-    title: defaultTitle,
-    description: defaultDescription,
-    image,
-    siteUrl,
-    twitterUsername,
-  } = useSiteMetadata();
+    metaTitle: defaultTitle,
+    metaDescription: defaultDescription,
+    metaImage: defaultImage,
+    metaSocial: defaultSocial,
+    keywords: defaultKeywords,
+    metaRobots: defaultRobots,
+    metaViewport: defaultViewport,
+    canonicalURL: defaultUrl,
+  }: SeoProps = useSiteMetadata();
 
   const seo = {
-    author: props.author || defaultAuthor,
-    site: props.site || defaultSite,
-    creator: props.creator || defaultCreator,
-    title: props.title || defaultTitle,
-    description: props.description || defaultDescription,
-    image: `${siteUrl}${image}`,
-    url: `${siteUrl}${props.pathname || ""}`,
-    twitterUsername,
+    title: props.metaTitle || defaultTitle,
+    description: props.metaDescription || defaultDescription,
+    image: `${props.canonicalURL || defaultUrl}${
+      props.metaImage || defaultImage
+    }`,
+    url: `${props.canonicalURL}`,
+    socialNetwork:
+      props.metaSocial?.socialNetwork || defaultSocial?.socialNetwork,
+    socialTitle: props.metaSocial?.title || defaultSocial?.title,
+    viewport: props.metaViewport || defaultViewport,
   };
 
   return (
     <>
       <title>{seo.title}</title>
       <meta charSet="UTF-8" />
+      <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link
         rel="icon"
@@ -65,19 +68,13 @@ export default function SEO(props: SeoProps) {
         sizes="16x16"
         type="image/png"
       />
+      <meta name="title" content={seo.title} />
       <meta name="description" content={seo.description} />
-      <meta name="author" content={seo.author} />
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content={seo.site} />
-      <meta name="twitter:creator" content={seo.creator} />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
-      <meta httpEquiv="content-type" content="text/html; charset=utf-8" />
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-      />
+      <meta name={seo.socialNetwork+"title"} content={seo.title} />
+      <meta name={seo.socialNetwork+"description"} content={seo.description} />
+      <meta name={seo.socialNetwork+"iimage"} content={seo.image} />
+      <meta name="viewport" content={seo.viewport} />
     </>
   );
 }

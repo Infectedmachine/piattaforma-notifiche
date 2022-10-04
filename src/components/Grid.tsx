@@ -8,7 +8,7 @@ export default function Grid(props: GridProps) {
   const theme = useTheme();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
   const [altImages, setAltImages] = React.useState<Array<string | undefined>>(
-    props.body.map((item) => item.image)
+    props.items.map((item) => item.image)
   );
 
   const onImgError = React.useCallback((index: number) => {
@@ -20,7 +20,7 @@ export default function Grid(props: GridProps) {
   return (
     <Showcase
       title={isMobileDevice ? props.titleMobile : props.title}
-      items={props.body.map((item, index) => ({
+      items={props.items.map((item, index) => ({
         icon: item.image ? (
           <img
             src={altImages[index]}
@@ -29,7 +29,7 @@ export default function Grid(props: GridProps) {
             onError={() => onImgError(index)}
           />
         ) : undefined,
-        title: isMobileDevice ? item.titleMobile : item.title,
+        title: isMobileDevice ? item.titlemobile : item.title,
         subtitle: item.body || "",
       }))}
     />

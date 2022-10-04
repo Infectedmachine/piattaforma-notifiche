@@ -1,15 +1,22 @@
 import type { GatsbyConfig } from "gatsby";
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `piattaforma-notifiche`,
-    siteUrl: `https://www.yourdomain.tld`,
-    description: `site-description`,
-    twitterUsername: `@site-twitter-account`,
-    image: `/site-icon.png`,
-    site: `https://www.twitterdomain.tld`,
-    author: `author`,
-    creator: `creator`,
+    metaTitle: `piattaforma-notifiche`,
+    canonicalURL: `https://www.yourdomain.tld`,
+    metaDescription: `site-description`,
+    metaSocial: {
+      socialNetwork: `@site-twitter-account`,
+      title: `https://www.twitterdomain.tld`,
+      description: `author`,
+      image: `/site-icon.png`,
+    },
+    keywords: `random-stuff`,
+    metaRobots: `stuff`,
+    metaViewport: `width=device-width, initial-scale=1, shrink-to-fit=no`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -24,6 +31,14 @@ const config: GatsbyConfig = {
         path: "./src/pages/",
       },
       __key: "pages",
+    },
+    {
+      resolve: "gatsby-source-strapi",
+      options: {
+        apiURL: process.env.STRAPI_API_URL || "http://localhost:1337",
+        collectionTypes: [],
+        singleTypes: [],
+      },
     },
   ],
 };

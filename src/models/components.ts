@@ -1,53 +1,64 @@
 export type IconTypeText = "primary" | "secondary";
 export type ImagePosition = "left" | "right" | "top" | "bottom";
 export type AspectRatio = "4/3" | "9/16";
+
+export interface PageProps {
+  title: string;
+  titleMobile?: string;
+  description?: string;
+  slug: string;
+  body?: string;
+  blocks: Array<GridProps | HeroProps | LinkProps>;
+  seo?: SeoProps;
+}
 export interface LinkProps {
   title: string;
-  titleMobile: string;
+  titlemobile: string;
   body?: string;
-  icon?: string;
-  iconColor?: IconTypeText;
-  related?: string;
+  image?: string;
+  page?: PageProps;
   externalUrl?: string;
-  cssClass?: string;
-  attributes?: Array<string>;
   target?: string;
+  attributes?: string;
+  cssclass?: string;
+  reactcomponent?: string;
 }
 
 export interface HeroProps {
   title: string;
-  titleMobile: string;
+  titlemobile: string;
   body: string;
   images?: Array<string>;
-  background?: string;
-  imagePosition?: ImagePosition;
-  buttons?: Array<LinkProps>;
+  imageposition?: ImagePosition;
   attributes?: Array<string>;
-  cssClass?: string;
-  aspectRatio?: AspectRatio;
+  cssclass?: string;
+  reactcomponent?: string;
+  buttons?: Array<LinkProps>;
 }
 
-export interface GridItemProps {
-  title: string;
-  titleMobile: string;
-  body?: string;
-  image?: string;
-}
+export interface GridItemProps extends LinkProps {}
 
 export interface GridProps {
   title: string;
   titleMobile: string;
-  body: Array<GridItemProps>;
+  body?: string;
+  items: Array<GridItemProps>;
 }
 
 export interface SeoProps {
-  author?: string;
-  site?: string;
-  creator?: string;
-  title?: string;
-  description?: string;
-  pathname?: string; 
-  children?: React.ReactNode;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaImage?: string;
+  metaSocial?: {
+    socialNetwork?: string;
+    title?: string;
+    description?: string;
+    image?: string;
+  };
+  keywords?: string;
+  metaRobots?: string;
+  metaViewport?: string;
+  canonicalURL?: string;
 }
 
 export interface WalkthroughItem {

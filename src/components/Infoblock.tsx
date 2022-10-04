@@ -11,19 +11,18 @@ export default function InfoblockComponent(props: HeroProps) {
 
   return (
     <Infoblock
-      title={isMobileDevice ? props.titleMobile : props.title}
+      title={isMobileDevice ? props.titlemobile : props.title}
       content={props.body}
-      inverse={props.imagePosition === "left"}
+      inverse={props.imageposition === "left"}
       imageShadow={false}
       image={props.images?.[0] || altIcon}
-      aspectRatio={props.aspectRatio}
       ctaPrimary={
         props.buttons?.[0] && {
           label: props.buttons[0].title,
           title: props.buttons[0].title,
           onClick: () => {
-            props.buttons && props.buttons[0].related
-              ? navigate(props.buttons[0].related)
+            props.buttons && props.buttons[0].page?.slug
+              ? navigate(props.buttons[0].page?.slug)
               : window
                   .open(props.buttons && props.buttons[0].externalUrl, "_blank")
                   ?.focus();
@@ -35,8 +34,8 @@ export default function InfoblockComponent(props: HeroProps) {
           label: props.buttons[1].title,
           title: props.buttons[1].title,
           onClick: () => {
-            props.buttons && props.buttons[1].related
-              ? navigate(props.buttons[1].related)
+            props.buttons && props.buttons[1].page?.slug
+              ? navigate(props.buttons[1].page?.slug)
               : window
                   .open(props.buttons && props.buttons[1].externalUrl, "_blank")
                   ?.focus();

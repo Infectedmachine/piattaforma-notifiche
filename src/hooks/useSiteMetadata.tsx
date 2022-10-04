@@ -5,14 +5,18 @@ export const useSiteMetadata = () => {
     query {
       site {
         siteMetadata {
-          title
-          description
-          twitterUsername
-          image
-          siteUrl
-          author
-          site
-          creator
+          metaTitle
+          canonicalURL
+          metaDescription
+          metaSocial {
+            socialNetwork
+            title
+            description
+            image
+          }
+          keywords
+          metaRobots
+          metaViewport
         }
       }
     }

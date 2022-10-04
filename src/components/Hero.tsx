@@ -10,10 +10,9 @@ export default function HeroComponent(props: HeroProps) {
 
   return (
     <Hero
-      title={isMobileDevice ? props.titleMobile : props.title}
+      title={isMobileDevice ? props.titlemobile : props.title}
       subtitle={props.body}
-      inverse={props.imagePosition === "left"}
-      background={props.background}
+      inverse={props.imageposition === "left"}
       {...(props.images
         ? {
             image: props.images[0],
@@ -28,8 +27,8 @@ export default function HeroComponent(props: HeroProps) {
           label: props.buttons[0].title,
           title: props.buttons[0].title,
           onClick: () => {
-            props.buttons && props.buttons[0].related
-              ? navigate(props.buttons[0].related)
+            props.buttons && props.buttons[0].page?.slug
+              ? navigate(props.buttons[0].page?.slug)
               : window
                   .open(props.buttons && props.buttons[0].externalUrl, "_blank")
                   ?.focus();
@@ -41,8 +40,8 @@ export default function HeroComponent(props: HeroProps) {
           label: props.buttons[1].title,
           title: props.buttons[1].title,
           onClick: () => {
-            props.buttons && props.buttons[1].related
-              ? navigate(props.buttons[1].related)
+            props.buttons && props.buttons[1].page?.slug
+              ? navigate(props.buttons[1].page?.slug)
               : window
                   .open(props.buttons && props.buttons[1].externalUrl, "_blank")
                   ?.focus();

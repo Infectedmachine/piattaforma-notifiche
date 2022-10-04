@@ -39,7 +39,7 @@ export default function GridItem(
             : theme.palette.text.primary,
         }}
       >
-        {isMobileDevice ? props.titleMobile : props.title}
+        {isMobileDevice ? props.titlemobile : props.title}
       </Typography>
       <Typography
         variant="body2"
