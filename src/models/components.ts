@@ -1,6 +1,4 @@
-export type IconTypeText = "primary" | "secondary";
 export type ImagePosition = "left" | "right" | "top" | "bottom";
-export type AspectRatio = "4/3" | "9/16";
 
 export interface PageProps {
   title: string;

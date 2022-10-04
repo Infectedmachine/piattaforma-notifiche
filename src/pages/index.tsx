@@ -34,16 +34,7 @@ const linkMock = {
     "https://upload.wikimedia.org/wikipedia/commons/5/5f/Piggy_Bank_or_Savings_Flat_Icon_Vector.svg",
   page: { title: "random", slug: "about", blocks: [] },
 };
-const IndexPage = ({
-  data,
-}: {
-  data: {
-    site: {
-      siteMetadata: { title: string };
-    };
-    strapi: any;
-  };
-}) => {
+const IndexPage = () => {
   return (
     <>
       <ThemeProvider theme={theme}>
@@ -77,7 +68,20 @@ export const query = graphql`
   query {
     site {
       siteMetadata {
+        canonicalURL
+        description
+        keywords
+        metaDescription
+        metaRobots
+        metaTitle
         title
+        metaViewport
+        metaSocial {
+          description
+          image
+          socialNetwork
+          title
+        }
       }
     }
   }

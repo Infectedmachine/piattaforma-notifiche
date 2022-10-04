@@ -5,18 +5,20 @@ export const useSiteMetadata = () => {
     query {
       site {
         siteMetadata {
-          metaTitle
           canonicalURL
+          description
+          keywords
           metaDescription
+          metaRobots
+          metaTitle
+          title
+          metaViewport
           metaSocial {
-            socialNetwork
-            title
             description
             image
+            socialNetwork
+            title
           }
-          keywords
-          metaRobots
-          metaViewport
         }
       }
     }
