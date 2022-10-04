@@ -51,22 +51,8 @@ const config: GatsbyConfig = {
               },
             },
           },
-          {
-            singularName: "user",
-          },
         ],
-        singleTypes: [
-          {
-            singularName: "navigation",
-            queryParams: {
-              populate: {
-                blocks: {
-                  populate: "*",
-                },
-              },
-            },
-          },
-        ],
+        singleTypes: [],
       },
     },
   ],

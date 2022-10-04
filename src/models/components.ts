@@ -71,3 +71,7 @@ export interface WalkthroughProps {
   titleMobile: string;
   body: Array<WalkthroughItem>;
 }
+
+export interface StrapiBlock { 
+  __typename: string;
+}
