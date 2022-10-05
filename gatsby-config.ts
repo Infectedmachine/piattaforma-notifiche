@@ -41,14 +41,7 @@ const config: GatsbyConfig = {
           {
             singularName: "page",
             queryParams: {
-              populate: {
-                blocks: {
-                  populate: "*",
-                },
-                seo: {
-                  populate: "*",
-                },
-              },
+              populate: "deep"
             },
           },
         ],
