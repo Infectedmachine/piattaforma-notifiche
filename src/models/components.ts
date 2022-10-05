@@ -17,7 +17,7 @@ export interface LinkProps extends StrapiBlock {
   body?: { data: { body: string } };
   image?: StrapiImage;
   page?: PageProps;
-  externalUrl?: string;
+  externalurl?: string;
   target?: string;
   attributes?: string;
   cssclass?: string;

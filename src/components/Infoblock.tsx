@@ -1,9 +1,8 @@
 import { useMediaQuery, useTheme } from "@mui/material";
-import { Hero, Infoblock } from "@pagopa/mui-italia";
-import { navigate } from "gatsby";
+import { Infoblock } from "@pagopa/mui-italia";
 import * as React from "react";
-import { HeroProps } from "../models/components";
 import altIcon from "../images/altIcon.png";
+import { HeroProps } from "../models/components";
 import getConfig from "../utils/config/config";
 
 export default function InfoblockComponent(props: HeroProps) {
@@ -24,9 +23,9 @@ export default function InfoblockComponent(props: HeroProps) {
           title: props.buttons[0].title,
           onClick: () => {
             props.buttons && props.buttons[0].page?.slug
-              ? navigate(props.buttons[0].page?.slug)
+              ? (window.location.href = props.buttons[0].page?.slug)
               : window
-                  .open(props.buttons && props.buttons[0].externalUrl, "_blank")
+                  .open(props.buttons && props.buttons[0].externalurl, "_blank")
                   ?.focus();
           },
         }
@@ -37,9 +36,9 @@ export default function InfoblockComponent(props: HeroProps) {
           title: props.buttons[1].title,
           onClick: () => {
             props.buttons && props.buttons[1].page?.slug
-              ? navigate(props.buttons[1].page?.slug)
+              ? (window.location.href = props.buttons[1].page?.slug)
               : window
-                  .open(props.buttons && props.buttons[1].externalUrl, "_blank")
+                  .open(props.buttons && props.buttons[1].externalurl, "_blank")
                   ?.focus();
           },
         }

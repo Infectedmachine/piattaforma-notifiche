@@ -5,7 +5,7 @@ import altIcon from "../images/altIcon.png";
 import getConfig from "../utils/config/config";
 
 export default function GridItem(
-  props: GridItemProps & { navigable?: boolean }
+  props: GridItemProps & { navigable?: boolean; displayBody?: boolean }
 ) {
   const theme = useTheme();
   const appConfig = getConfig();
@@ -44,13 +44,15 @@ export default function GridItem(
       >
         {isMobileDevice ? props.titlemobile : props.title}
       </Typography>
-      <Typography
-        variant="body2"
-        component={"div"}
-        sx={{ color: theme.palette.text.secondary }}
-      >
-        {props.body?.data.body}
-      </Typography>
+      {props.displayBody && (
+        <Typography
+          variant="body2"
+          component={"div"}
+          sx={{ color: theme.palette.text.secondary }}
+        >
+          {props.body?.data.body}
+        </Typography>
+      )}
     </Box>
   );
 }

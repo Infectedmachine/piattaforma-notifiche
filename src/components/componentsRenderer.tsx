@@ -75,6 +75,19 @@ export const query = graphql`
       }
       title
       titlemobile
+      buttons {
+        title
+        titlemobile
+        page {
+          slug
+        }
+        externalurl
+        body {
+          data {
+            body
+          }
+        }
+      }
     }
     ... on STRAPI__COMPONENT_SHARED_LINK {
       body {
@@ -87,6 +100,7 @@ export const query = graphql`
         slug
       }
       title
+      externalurl
     }
   }
 `;
