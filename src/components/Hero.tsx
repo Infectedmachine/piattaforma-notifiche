@@ -3,11 +3,13 @@ import { Hero } from "@pagopa/mui-italia";
 import { navigate } from "gatsby";
 import * as React from "react";
 import { HeroProps } from "../models/components";
+import getConfig from "../utils/config/config";
 
 export default function HeroComponent(props: HeroProps) {
   const theme = useTheme();
+  const appConfig = getConfig();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
-  console.log(`${process.env.STRAPI_API_URL}${props.images?.[0].url}`);
+
   return (
     <Hero
       title={isMobileDevice ? props.titlemobile : props.title}
@@ -15,7 +17,7 @@ export default function HeroComponent(props: HeroProps) {
       inverse={props.imageposition === "left"}
       {...(props.images
         ? {
-            image: `${process.env.STRAPI_API_URL}${props.images[0].url}`,
+            image: `${appConfig.STRAPI_API_URL}${props.images[0].url}`,
             type: "image",
             altText: "",
           }

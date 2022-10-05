@@ -9,7 +9,7 @@ const config: GatsbyConfig = {
     canonicalURL: `https://www.yourdomain.tld`,
     metaDescription: `site-description`,
     metaSocial: {
-      socialNetwork: `@site-twitter-account`,
+      socialNetwork: `twitter`,
       title: `https://www.twitterdomain.tld`,
       description: `author`,
       image: `/site-icon.png`,

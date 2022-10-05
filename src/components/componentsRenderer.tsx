@@ -52,9 +52,16 @@ export const query = graphql`
         }
         title
         titlemobile
+        externalurl
+        image {
+          alternativeText
+          url
+        }
+        page {
+          slug
+        }
       }
     }
-    __typename
     ... on STRAPI__COMPONENT_SHARED_HERO {
       body {
         data {
@@ -64,11 +71,11 @@ export const query = graphql`
       imageposition
       images {
         url
+        alternativeText
       }
       title
       titlemobile
     }
-    __typename
     ... on STRAPI__COMPONENT_SHARED_LINK {
       body {
         data {

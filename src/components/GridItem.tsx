@@ -2,14 +2,17 @@ import * as React from "react";
 import { GridItemProps } from "../models/components";
 import { Box, Link, Typography, useMediaQuery, useTheme } from "@mui/material";
 import altIcon from "../images/altIcon.png";
+import getConfig from "../utils/config/config";
 
 export default function GridItem(
   props: GridItemProps & { navigable?: boolean }
 ) {
   const theme = useTheme();
+  const appConfig = getConfig();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
-  const [altImage, setAltImage] = React.useState(props.image?.url);
-
+  const [altImage, setAltImage] = React.useState(
+    `${appConfig.STRAPI_API_URL}${props.image?.url}`
+  );
   const onImgError = React.useCallback(() => setAltImage(altIcon), []);
 
   return (

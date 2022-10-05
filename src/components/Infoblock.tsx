@@ -4,9 +4,11 @@ import { navigate } from "gatsby";
 import * as React from "react";
 import { HeroProps } from "../models/components";
 import altIcon from "../images/altIcon.png";
+import getConfig from "../utils/config/config";
 
 export default function InfoblockComponent(props: HeroProps) {
   const theme = useTheme();
+  const appConfig = getConfig();
   const isMobileDevice = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
@@ -15,7 +17,7 @@ export default function InfoblockComponent(props: HeroProps) {
       content={props.body.data.body}
       inverse={props.imageposition === "left"}
       imageShadow={false}
-      image={props.images?.[0].url || altIcon}
+      image={`${appConfig.STRAPI_API_URL}${props.images?.[0].url}` || altIcon}
       ctaPrimary={
         props.buttons?.[0] && {
           label: props.buttons[0].title,

@@ -7,6 +7,7 @@ export const useAllStrapiPages = () => {
       allStrapiPage {
         nodes {
           blocks {
+            __typename
             ... on STRAPI__COMPONENT_SHARED_GRID {
               body {
                 data {
@@ -23,9 +24,16 @@ export const useAllStrapiPages = () => {
                 }
                 title
                 titlemobile
+                externalurl
+                image {
+                  alternativeText
+                  url
+                }
+                page {
+                  slug
+                }
               }
             }
-            __typename
             ... on STRAPI__COMPONENT_SHARED_HERO {
               body {
                 data {
@@ -35,11 +43,11 @@ export const useAllStrapiPages = () => {
               imageposition
               images {
                 url
+                alternativeText
               }
               title
               titlemobile
             }
-            __typename
             ... on STRAPI__COMPONENT_SHARED_LINK {
               body {
                 data {
@@ -57,6 +65,25 @@ export const useAllStrapiPages = () => {
           title
           titlemobile
           description
+          seo {
+            canonicalURL
+            metaDescription
+            metaImage {
+              alternativeText
+              url
+            }
+            metaSocial {
+              title
+              socialNetwork
+              image {
+                alternativeText
+                url
+              }
+              description
+            }
+            metaTitle
+            metaViewport
+          }
         }
       }
     }
