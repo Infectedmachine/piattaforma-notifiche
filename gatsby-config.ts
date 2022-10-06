@@ -41,11 +41,21 @@ const config: GatsbyConfig = {
           {
             singularName: "page",
             queryParams: {
-              populate: "deep"
+              populate: "deep",
             },
           },
         ],
         singleTypes: [],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-schema-snapshot`,
+      options: {
+        path: `schema.gql`,
+        exclude: {
+          plugins: [`gatsby-source-npm-package-search`],
+        },
+        update: false,
       },
     },
   ],

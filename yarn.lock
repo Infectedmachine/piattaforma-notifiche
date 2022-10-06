@@ -5442,6 +5442,13 @@ gatsby-plugin-page-creator@^4.24.0:
     globby "^11.1.0"
     lodash "^4.17.21"
 
+gatsby-plugin-schema-snapshot@^3.24.0:
+  version "3.24.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-schema-snapshot/-/gatsby-plugin-schema-snapshot-3.24.0.tgz#da08bda4cb3b3faaf823b971fa00a4bd3fd84ed7"
+  integrity sha512-zhkpNQU6vD+mJ/XHRadAG/SWDdMZz0F0DxWCjBBuB0PV8nUiUkN+MKNR2GpWzk8iYDZ6I6uQV4Zc4FLf7sNqYA==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+
 gatsby-plugin-typescript@^4.24.0:
   version "4.24.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typescript/-/gatsby-plugin-typescript-4.24.0.tgz#e20631bdca7023ecd6d36e9d0531c59724e3c7a1"
