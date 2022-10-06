@@ -4,13 +4,14 @@ import { StrapiBlock } from "../models/components";
 import Grid from "./Grid";
 import GridItem from "./GridItem";
 import HeroComponent from "./Hero";
+import HeroInfoblock from "./HeroInfoblock";
 import LinkComponent from "./Link";
 import SEO from "./Seo";
 
 const componentsMap: {
   [key: string]: (props: any) => JSX.Element;
 } = {
-  STRAPI__COMPONENT_SHARED_HERO: HeroComponent,
+  STRAPI__COMPONENT_SHARED_HERO: HeroInfoblock,
   STRAPI__COMPONENT_SHARED_LINK: LinkComponent,
   STRAPI__COMPONENT_SHARED_GRIDITEM: GridItem,
   STRAPI__COMPONENT_SHARED_GRID: Grid,
@@ -87,6 +88,13 @@ export const query = graphql`
             body
           }
         }
+        image {
+          alternativeText
+          url
+        }
+      }
+      extra {
+        variant
       }
     }
     ... on STRAPI__COMPONENT_SHARED_LINK {

@@ -1,4 +1,8 @@
 export type ImagePosition = "left" | "right" | "top" | "bottom";
+export enum HeroVariant {
+  BLU = "blue",
+  WHITE = "white",
+}
 export interface StrapiImage {
   url: string;
 }
@@ -34,6 +38,7 @@ export interface HeroProps extends StrapiBlock {
   cssclass?: string;
   reactcomponent?: string;
   buttons?: Array<LinkProps>;
+  extra?: { variant: HeroVariant };
 }
 
 export interface GridItemProps extends LinkProps {}
