@@ -6,7 +6,7 @@ dotenv.config({ path: __dirname + `/.env.${process.env.NODE_ENV}` });
 const config: GatsbyConfig = {
   siteMetadata: {
     metaTitle: `piattaforma-notifiche`,
-    canonicalURL: `http://localhost:8001`,
+    canonicalURL: `http://localhost:8000`,
     metaDescription: `site-description`,
     metaSocial: {
       socialNetwork: `twitter`,

@@ -1,9 +1,8 @@
-import * as React from "react";
-import { graphql, HeadFC } from "gatsby";
 import { ThemeProvider } from "@emotion/react";
 import { theme } from "@pagopa/mui-italia";
+import { graphql, HeadFC } from "gatsby";
+import * as React from "react";
 import BlocksRenderer from "../components/componentsRenderer";
-import { useStrapiPage } from "../hooks/useStrapiPage";
 import SEO from "../components/Seo";
 
 export default function Page({ data }: any) {

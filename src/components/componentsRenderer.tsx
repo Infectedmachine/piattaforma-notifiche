@@ -101,6 +101,10 @@ export const query = graphql`
       }
       title
       externalurl
+      image {
+        alternativeText
+        url
+      }
     }
   }
 `;
